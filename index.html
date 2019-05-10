@@ -5,7 +5,6 @@
         <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
         <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
         <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-	     <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
             <style>
                 .a-enter-vr {
                     display: none;
@@ -15,7 +14,7 @@
 		    -moz-position: sticky;
                     bottom: 0%;
                     width: 100%;
-                    height: 15%;
+                    height: 10%;
 		    left: 0%;
                     background-color: white;
                     z-index:  1;
@@ -45,7 +44,6 @@
                 .plashka__title {
                     text-align: center;
                 }
-
                 @media (max-width: 600px) {
                     .plashka {
                         font-size: 0.5em;
@@ -61,14 +59,9 @@
 		
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='pattern' url='https://raw.githubusercontent.com/pavel4701/artest5/master/pattern-marker%20(11).patt'>
-            <a-entity
-                id="animated-model"
-                gltf-model="#animated-asset"
-                scale="2">
-            </a-entity>
-        </a-marker>
-        <a-entity id="animated-asset" gltf-model="https://raw.githubusercontent.com/pavel4701/artest5/master/1212.gltf"></a-entity>
+
+        <a-marker type='pattern' url='https://raw.githubusercontent.com/pavel4701/artest5/master/pattern-marker%20(11).patt'>
+        <a-entity gltf-model="https://raw.githubusercontent.com/pavel4701/artest5/master/1212.gltf"></a-entity>
       </a-entity>
         </a-marker>
         <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
